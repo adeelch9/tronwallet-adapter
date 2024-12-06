@@ -161,7 +161,7 @@ function SignDemo() {
     const { signMessage, signTransaction, address } = useWallet();
     const [message, setMessage] = useState('');
     const [signedMessage, setSignedMessage] = useState('');
-    const receiver = 'TMDKznuDWaZwfZHcM61FVFstyYNmK6Njk1';
+    const receiver = 'TB1ZFuQhPJFfmfEoQ1x7N22zQSs1ZQtrfE';
     const [open, setOpen] = useState(false);
 
     async function onSignMessage() {
@@ -170,7 +170,7 @@ function SignDemo() {
     }
 
     async function onSignTransaction() {
-        const transaction = await tronWeb.transactionBuilder.sendTrx(receiver, tronWeb.toSun(0.001), address);
+        const transaction = await tronWeb.transactionBuilder.sendTrx(receiver, tronWeb.toSun(0.001), "TUGYpeNrwjscc6vxsts888RtRA9e7RkR5A");
         const signedTransaction = await signTransaction(transaction);
         // const signedTransaction = await tronWeb.trx.sign(transaction);
         const res = await tronWeb.trx.sendRawTransaction(signedTransaction);
